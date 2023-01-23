@@ -3,7 +3,6 @@
 
 #endif /* CLI_hpp */
 #include <stdio.h>
-
 #include <iostream>
 
 /*

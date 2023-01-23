@@ -15,7 +15,7 @@ void CLI::end () {
 double CLI::validateDouble () {
   double input;
   cin >> input;
-  while (cin.fail() || input <= 0) { // check if the input is valid
+  while (cin.fail()) {
     cout << "Invalid value, please try again: " << endl;
     cin.clear();
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -27,12 +27,19 @@ double CLI::validateDouble () {
 double CLI::askForDuration () {
   cout << " · Enter duration (seconds):" << endl;
   double duration = CLI::validateDouble();
+  while (duration <= 0) {
+    cout << "Duration must be greater than 0, please try again: " << endl;
+    duration = CLI::validateDouble();
+  }
   return duration;
 }
 
 double CLI::askForFrequency () {
   cout << " · Enter frequency (Hz):" << endl;
   double frequency = CLI::validateDouble();
+  while (frequency <= 0) {
+    cout << "Frequency must be greater than 0, please try again: " << endl;
+    frequency = CLI::validateDouble();
+  }
   return frequency;
 }
-

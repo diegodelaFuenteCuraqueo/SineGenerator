@@ -23,12 +23,23 @@ class WaveForm {
 
   public:
     /*
-      Object Constructor:
+      Object Constructors:
       @param sr <int>: the base sample rate of the waveform.
       @param freq <double>: the frequency of the waveform
       @param amp <int>: the amplitude of the waveform.
     */
     WaveForm(int sr, double freq, int amp);
+    WaveForm();
+
+    //setters
+    void setAmplitude(int amp);
+    void setFrequency(double freq);
+    void setSampleRate(int sr);
+
+    //getters
+    int getAmplitude();
+    double getFrequency();
+    int getSampleRate();
 
     /*
       This function calculates a simple sinewave.
@@ -36,4 +47,10 @@ class WaveForm {
       @return <int>: the value of the sinewave at the given index.
     */
     int sinewave(int index);
+
+  /* TODO:
+     void squarewave(double frequency);
+     void phasorwave(double frequency);
+     ...and so
+   */
 };

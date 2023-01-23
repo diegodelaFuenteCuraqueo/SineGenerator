@@ -10,4 +10,3 @@ void SaveWaveInWav(double duration, double frequency) {
     waveFileHandler.writeWaveFileHeader();
     waveFileHandler.writeSinewave(frequency);
 }
-
