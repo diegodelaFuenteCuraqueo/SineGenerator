@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E40BCA9F297DFDC5001B6635 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E40BCA9E297DFDC5001B6635 /* main.cpp */; };
+		E4415EF7297E1532003658AB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E40BCA9E297DFDC5001B6635 /* main.cpp */; };
+		E4415EF8297E1536003658AB /* CLI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4415EF5297E14F9003658AB /* CLI.cpp */; };
+		E4415EFB297E1546003658AB /* WaveForm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E40BCAA8297E0117001B6635 /* WaveForm.cpp */; };
+		E4415F02297E159A003658AB /* WaveFileHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4415EFD297E159A003658AB /* WaveFileHandler.cpp */; };
+		E4415F03297E159A003658AB /* SaveWaveInWav.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4415F01297E159A003658AB /* SaveWaveInWav.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +28,15 @@
 
 /* Begin PBXFileReference section */
 		E40BCA9B297DFDC5001B6635 /* SineGenerator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SineGenerator; sourceTree = BUILT_PRODUCTS_DIR; };
-		E40BCA9E297DFDC5001B6635 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		E40BCA9E297DFDC5001B6635 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = SineGenerator/main.cpp; sourceTree = SOURCE_ROOT; };
+		E40BCAA8297E0117001B6635 /* WaveForm.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = WaveForm.cpp; sourceTree = "<group>"; };
+		E4415EF4297E14F9003658AB /* CLI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLI.h; sourceTree = "<group>"; };
+		E4415EF5297E14F9003658AB /* CLI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CLI.cpp; sourceTree = "<group>"; };
+		E4415EFD297E159A003658AB /* WaveFileHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.cpp.cpp; path = WaveFileHandler.cpp; sourceTree = "<group>"; tabWidth = 2; };
+		E4415EFE297E159A003658AB /* WaveFileHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaveFileHandler.h; sourceTree = "<group>"; };
+		E4415F00297E159A003658AB /* SaveWaveInWav.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveWaveInWav.h; sourceTree = "<group>"; };
+		E4415F01297E159A003658AB /* SaveWaveInWav.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SaveWaveInWav.cpp; sourceTree = "<group>"; };
+		E4FB2C66297E0EFC007AD182 /* WaveForm.hpp */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.cpp.h; path = WaveForm.hpp; sourceTree = "<group>"; tabWidth = 2; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +69,49 @@
 		E40BCA9D297DFDC5001B6635 /* SineGenerator */ = {
 			isa = PBXGroup;
 			children = (
+				E4415EFC297E159A003658AB /* WaveFileHandler */,
+				E4415EFF297E159A003658AB /* SaveWaveInWav */,
+				E4415EF3297E14F9003658AB /* CLI */,
 				E40BCA9E297DFDC5001B6635 /* main.cpp */,
+				E4415ED9297E10A2003658AB /* WaveForm */,
 			);
 			path = SineGenerator;
+			sourceTree = "<group>";
+		};
+		E4415ED9297E10A2003658AB /* WaveForm */ = {
+			isa = PBXGroup;
+			children = (
+				E40BCAA8297E0117001B6635 /* WaveForm.cpp */,
+				E4FB2C66297E0EFC007AD182 /* WaveForm.hpp */,
+			);
+			path = WaveForm;
+			sourceTree = "<group>";
+		};
+		E4415EF3297E14F9003658AB /* CLI */ = {
+			isa = PBXGroup;
+			children = (
+				E4415EF4297E14F9003658AB /* CLI.h */,
+				E4415EF5297E14F9003658AB /* CLI.cpp */,
+			);
+			path = CLI;
+			sourceTree = "<group>";
+		};
+		E4415EFC297E159A003658AB /* WaveFileHandler */ = {
+			isa = PBXGroup;
+			children = (
+				E4415EFD297E159A003658AB /* WaveFileHandler.cpp */,
+				E4415EFE297E159A003658AB /* WaveFileHandler.h */,
+			);
+			path = WaveFileHandler;
+			sourceTree = "<group>";
+		};
+		E4415EFF297E159A003658AB /* SaveWaveInWav */ = {
+			isa = PBXGroup;
+			children = (
+				E4415F00297E159A003658AB /* SaveWaveInWav.h */,
+				E4415F01297E159A003658AB /* SaveWaveInWav.cpp */,
+			);
+			path = SaveWaveInWav;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,7 +171,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E40BCA9F297DFDC5001B6635 /* main.cpp in Sources */,
+				E4415F03297E159A003658AB /* SaveWaveInWav.cpp in Sources */,
+				E4415EFB297E1546003658AB /* WaveForm.cpp in Sources */,
+				E4415F02297E159A003658AB /* WaveFileHandler.cpp in Sources */,
+				E4415EF8297E1536003658AB /* CLI.cpp in Sources */,
+				E4415EF7297E1532003658AB /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
