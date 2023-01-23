@@ -65,7 +65,7 @@ void WaveFileHandler::writeWaveFileHeader() {
 }
 
 void WaveFileHandler::writeSinewave(double frequency) {
-  cout << " ~ Wave File : writing Sinewave... (" + frequency + " hz, "+sampleRate+" sr)" << endl;
+  cout << " ~ Wave File : writing Sinewave... (" + to_string(frequency) + " hz, "+to_string(sampleRate)+" sr)" << endl;
 
   ofstream outFile(fileName + ".wav", ios::binary | ios::app);
   WaveForm sineMaker(sampleRate, frequency, AMPLITUDE);
@@ -81,7 +81,7 @@ void WaveFileHandler::writeSinewave(double frequency) {
     exit(1);
   }
   // Close the file
-  cout << " ~ Wave File : closing file ~" << endl;
+  cout << " ~ Wave File : "+to_string(getTotalSamples())+" samples saved. Closing file ~" << endl;
   outFile.close();
 }
 

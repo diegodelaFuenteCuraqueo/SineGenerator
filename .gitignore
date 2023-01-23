@@ -1,3 +1,5 @@
 *.wav
 SineGenerator/app
-*.wav
+*wav
+*.swp
+*.o
