@@ -26,7 +26,7 @@ class WaveForm {
        - amp <int>: the amplitude of the waveform.
     */
     WaveForm(int sr, double freq, int amp);
-    WaveForm();
+    ~WaveForm();
 
     //setters
     void setAmplitude(int amp);

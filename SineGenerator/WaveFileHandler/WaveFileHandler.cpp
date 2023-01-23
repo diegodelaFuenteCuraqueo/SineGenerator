@@ -6,11 +6,15 @@
 using namespace std;
 
 
-WaveFileHandler::WaveFileHandler (int sr, double dur) {
+WaveFileHandler::WaveFileHandler(int sr, double dur) {
   sampleRate = sr;
   duration = dur;
   numChannels = 1;
   fileName = "sine_wave";
+}
+
+WaveFileHandler::~WaveFileHandler() {
+  
 }
 
 int WaveFileHandler::getTotalSamples() {

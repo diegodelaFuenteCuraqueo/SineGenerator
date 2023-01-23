@@ -29,6 +29,7 @@ class WaveFileHandler
         - dur : the duration of the wav file in seconds. <double>
     */
     WaveFileHandler(int sr, double dur);
+    ~WaveFileHandler();
 
     //setters
     void setSampleRate(int sr);
