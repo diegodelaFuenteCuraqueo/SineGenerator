@@ -1,14 +1,15 @@
 #ifndef WaveFileHandler_hpp
 #define WaveFileHandler_hpp
 
-#endif /* WaveFileHandler_hpp */
-
 #include <stdio.h>
 #include <iostream>
 #include <fstream>
 using namespace std;
 
-/*
+#define AMPLITUDE 8388607
+#define BITDEPTH 24
+
+/**
   This class is used to handle a wav file.
   It creates the header and writes the data to the file.
 */
@@ -21,13 +22,13 @@ class WaveFileHandler
     std::string fileName;
 
   public:
-    /*
-      Object Constructor:
-      @param sr <int>: the sample rate of the wav file.
-      @param dur <double>: the duration of the wav file in seconds.
+    /**
+    Object Constructor:
+     - Parameters:
+        - sr : the sample rate of the wav file. <int>
+        - dur : the duration of the wav file in seconds. <double>
     */
     WaveFileHandler(int sr, double dur);
-    WaveFileHandler();
 
     //setters
     void setSampleRate(int sr);
@@ -41,16 +42,17 @@ class WaveFileHandler
     double getDuration();
     std::string getFileName();
     int getNumChannels();
-
-    /*
-      This function writes the header of the wav file.
-    */
+    
+    /// This function writes the header of the wav file.
     void writeWaveFileHeader();
 
-    /*
-      This function writes the data to the wav file.
-      @param frequency <double>: the frequency of the wav file in hz.
+    /**
+    This function writes the data to the wav file.
+     - Parameters:
+        - frequency : the frequency of the wav file in hz <double>.
     */
     void writeSinewave(double frequency);
 
 };
+
+#endif /* WaveFileHandler_hpp */

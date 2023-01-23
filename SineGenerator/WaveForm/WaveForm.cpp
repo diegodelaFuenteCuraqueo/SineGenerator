@@ -22,7 +22,7 @@ WaveForm::WaveForm (int sr, double freq, int amp)
 int WaveForm::sinewave (int index)
 {
   double sample = sin(2 * M_PI * frequency * index / sampleRate);
-  int normalizedSample = (int)(sample * amplitude);
+  int normalizedSample = static_cast<int>(sample * amplitude);
   return normalizedSample;
 }
 

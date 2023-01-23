@@ -5,10 +5,6 @@
 #include "../WaveForm/WaveForm.hpp"
 using namespace std;
 
-const int AMPLITUDE = 8388607;
-const int BITDEPTH = 24;
-
-WaveFileHandler::WaveFileHandler () {}
 
 WaveFileHandler::WaveFileHandler (int sr, double dur) {
   sampleRate = sr;
@@ -69,7 +65,7 @@ void WaveFileHandler::writeSinewave(double frequency) {
 
   ofstream outFile(fileName + ".wav", ios::binary | ios::app);
   WaveForm sineMaker(sampleRate, frequency, AMPLITUDE);
-
+  
   try {
     // Write sine wave samples one by one
     for (int i = 0; i < getTotalSamples(); i++) {
