@@ -9,32 +9,32 @@
 #include "WaveForm.hpp"
 using namespace std;
 
-WaveForm::WaveForm() {}
-
-WaveForm::WaveForm (int sr, double freq, int amp)
+WaveForm::WaveForm (int sampleRate, double frequency, int amplitude) :
+  sampleRate(sampleRate),
+  frequency(frequency),
+  amplitude(amplitude)
 {
   cout << " ~ WaveForm : creating waveform ~" << endl;
-  sampleRate = sr;
-  frequency = freq;
-  amplitude = amp;
 }
 
 int WaveForm::sinewave (int index)
 {
   double sample = sin(2 * M_PI * frequency * index / sampleRate);
-  int normalizedSample = (int)(sample * amplitude);
+  int normalizedSample = static_cast<int>(sample * amplitude);
   return normalizedSample;
 }
 
-void WaveForm::setSampleRate(int sr) { //validaciones
+WaveForm::~WaveForm() { }
+
+void WaveForm::setSampleRate(int sr) {
   sampleRate = sr;
 }
 
-void WaveForm::setFrequency(double freq) { //validaciones
+void WaveForm::setFrequency(double freq) {
   frequency = freq;
 }
 
-void WaveForm::setAmplitude(int amp) { //validaciones
+void WaveForm::setAmplitude(int amp) {
   amplitude = amp;
 }
 

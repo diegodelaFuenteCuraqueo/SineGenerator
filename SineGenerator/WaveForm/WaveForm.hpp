@@ -10,11 +10,7 @@
 
 #include <stdio.h>
 
-#endif /* WaveForm_hpp */
-
-/*
-  This class used to calculate waveforms.
-*/
+/// This class used to calculate waveforms.
 class WaveForm {
   private:
     int sampleRate;
@@ -22,14 +18,15 @@ class WaveForm {
     int amplitude;
 
   public:
-    /*
-      Object Constructors:
-      @param sr <int>: the base sample rate of the waveform.
-      @param freq <double>: the frequency of the waveform
-      @param amp <int>: the amplitude of the waveform.
+    /**
+     Object constructor
+      - Parameters:
+       - sr <int>: samplerate of the waveform.
+       - freq <double>: the frequency of the waveform
+       - amp <int>: the amplitude of the waveform.
     */
     WaveForm(int sr, double freq, int amp);
-    WaveForm();
+    ~WaveForm();
 
     //setters
     void setAmplitude(int amp);
@@ -41,10 +38,11 @@ class WaveForm {
     double getFrequency();
     int getSampleRate();
 
-    /*
-      This function calculates a simple sinewave.
-      @param index <int>: the index of the sample.
-      @return <int>: the value of the sinewave at the given index.
+    /**
+    This function calculates a simple sinewave.
+      - Parameters:
+        - index: the index of the sample.
+      - Returns: the value of the sinewave at the given index.
     */
     int sinewave(int index);
 
@@ -54,3 +52,5 @@ class WaveForm {
      ...and so
    */
 };
+
+#endif /* WaveForm_hpp */
