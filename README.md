@@ -1,7 +1,7 @@
 # SineGenerator
 By Diego de la Fuente
 ## Description
-A simple CLI Soundwave genetaror that can store the data in a wav file. It only requires the **duration** and the **frequency** of the wave.<BR>
+A simple C++ CLI Soundwave genetaror that can store the data in a wav file. It only requires the **duration** and the **frequency** of the wave.<BR>
 *(By default, the BitDepth = 24 and sample rate = 48000)*
 
 ## Basic Usage
@@ -15,7 +15,7 @@ After building and running the app (using g++ or Xcode). You'll get a welcome me
  · Enter duration (seconds):
 ```
 
-Both for Duration and Frequency, you can be a greater-than-zero decimal value.
+Both Duration and Frequency can be a greater-than-zero decimal value.
 
 ```
  · Enter frequency (Hz):
