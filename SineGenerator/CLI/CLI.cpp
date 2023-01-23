@@ -37,6 +37,7 @@ double CLI::validateDouble () {
     } else if (input <= 0) {
       throw wrongValueException();
     };
+
   } catch (inputException& e) {
     cout << e.what() << " Please try again: " << endl;
     input = CLI::validateDouble();
@@ -50,19 +51,11 @@ double CLI::validateDouble () {
 double CLI::askForDuration () {
   cout << " · Enter duration (seconds):" << endl;
   double duration = CLI::validateDouble();
-  while (duration <= 0) {
-    cout << "Duration must be greater than 0, please try again: " << endl;
-    duration = CLI::validateDouble();
-  }
   return duration;
 }
 
 double CLI::askForFrequency () {
   cout << " · Enter frequency (Hz):" << endl;
   double frequency = CLI::validateDouble();
-  while (frequency <= 0) {
-    cout << "Frequency must be greater than 0, please try again: " << endl;
-    frequency = CLI::validateDouble();
-  }
   return frequency;
 }
