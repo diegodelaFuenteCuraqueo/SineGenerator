@@ -2,6 +2,22 @@
 
 using namespace std;
 
+struct inputException : public exception {
+  const char * what () const throw () {
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    return "Invalid input value ";
+  }
+};
+
+struct wrongValueException : public exception {
+  const char * what () const throw () {
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    return "Value must be greater than 0";
+  }
+};
+
 CLI::CLI () {
   cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
   cout << "·   ·   ·  Sinewave wav file generator  ·   ·   ·" << endl;
@@ -14,13 +30,20 @@ void CLI::end () {
 
 double CLI::validateDouble () {
   double input;
-  cin >> input;
-  while (cin.fail()) {
-    cout << "Invalid value, please try again: " << endl;
-    cin.clear();
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    cin >> input; // asks again...
-  };
+  try {
+    cin >> input;
+    if (cin.fail()) {
+      throw inputException();
+    } else if (input <= 0) {
+      throw wrongValueException();
+    };
+  } catch (inputException& e) {
+    cout << e.what() << " Please try again: " << endl;
+    input = CLI::validateDouble();
+  } catch (wrongValueException& e) {
+    cout << e.what() << " Please try again: " << endl;
+    input = CLI::validateDouble();
+  }
   return input;
 }
 
