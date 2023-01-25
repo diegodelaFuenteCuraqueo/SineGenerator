@@ -10,6 +10,7 @@ class CLI
 {
   private:
     double validateDouble();
+    double validateFreq();
 
   public:
 

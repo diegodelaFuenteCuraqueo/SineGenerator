@@ -5,6 +5,10 @@
 #include "../WaveForm/WaveForm.hpp"
 using namespace std;
 
+struct fileErrorException : public exception {
+  const char * what () const throw () {
+    return "Couldn't open the file!";  }
+};
 
 WaveFileHandler::WaveFileHandler(int sr, double dur) {
   sampleRate = sr;
@@ -68,6 +72,10 @@ void WaveFileHandler::writeSinewave(double frequency) {
   cout << " ~ Wave File : writing Sinewave... (" + to_string(frequency) + " hz, "+to_string(sampleRate)+" sr)" << endl;
 
   ofstream outFile(fileName + ".wav", ios::binary | ios::app);
+  if (outFile.fail()) {
+    throw fileErrorException();
+  }
+
   WaveForm sineMaker(sampleRate, frequency, AMPLITUDE);
   
   try {
@@ -83,38 +91,4 @@ void WaveFileHandler::writeSinewave(double frequency) {
   // Close the file
   cout << " ~ Wave File : "+to_string(getTotalSamples())+" samples saved. Closing file ~" << endl;
   outFile.close();
-}
-
-// setters
-void WaveFileHandler::setSampleRate(int sr) {
-  sampleRate = sr;
-}
-
-void WaveFileHandler::setDuration(double dur) {
-  duration = dur;
-}
-
-void WaveFileHandler::setFileName(std::string name) {
-  fileName = name;
-}
-
-void WaveFileHandler::setNumChannels(int num) {
-  numChannels = num;
-}
-
-// getters
-int WaveFileHandler::getSampleRate() {
-  return sampleRate;
-}
-
-double WaveFileHandler::getDuration() {
-  return duration;
-}
-
-std::string WaveFileHandler::getFileName() {
-  return fileName;
-}
-
-int WaveFileHandler::getNumChannels() {
-  return numChannels;
 }

@@ -25,27 +25,3 @@ int WaveForm::sinewave (int index)
 }
 
 WaveForm::~WaveForm() { }
-
-void WaveForm::setSampleRate(int sr) {
-  sampleRate = sr;
-}
-
-void WaveForm::setFrequency(double freq) {
-  frequency = freq;
-}
-
-void WaveForm::setAmplitude(int amp) {
-  amplitude = amp;
-}
-
-int WaveForm::getSampleRate() {
-  return sampleRate;
-}
-
-double WaveForm::getFrequency() {
-  return frequency;
-}
-
-int WaveForm::getAmplitude() {
-  return amplitude;
-}
