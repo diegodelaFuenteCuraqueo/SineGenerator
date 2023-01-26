@@ -48,14 +48,21 @@ double CLI::validateDouble () {
   return input;
 }
 
+double CLI::validateFreq () {
+  double freq = CLI::validateDouble();
+  while (freq >= 24000) {
+    cout << "The maximum frequency is 24khz, to avoid aliasing try a value between 0 - 24,000" << endl;
+    freq = CLI::validateFreq();
+  }
+  return freq;
+}
+
 double CLI::askForDuration () {
   cout << " · Enter duration (seconds):" << endl;
-  double duration = CLI::validateDouble();
-  return duration;
+  return CLI::validateDouble();
 }
 
 double CLI::askForFrequency () {
   cout << " · Enter frequency (Hz):" << endl;
-  double frequency = CLI::validateDouble();
-  return frequency;
+  return CLI::validateFreq();
 }

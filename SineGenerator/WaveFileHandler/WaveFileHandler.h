@@ -31,18 +31,8 @@ class WaveFileHandler
     WaveFileHandler(int sr, double dur);
     ~WaveFileHandler();
 
-    //setters
-    void setSampleRate(int sr);
-    void setDuration(double dur);
-    void setFileName(std::string name);
-    void setNumChannels(int num);
-
-    //getters
+    /// - Returns <int>: total number of samples (sampleRate * duration)
     int getTotalSamples();
-    int getSampleRate();
-    double getDuration();
-    std::string getFileName();
-    int getNumChannels();
     
     /// This function writes the header of the wav file.
     void writeWaveFileHeader();

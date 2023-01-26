@@ -28,16 +28,6 @@ class WaveForm {
     WaveForm(int sr, double freq, int amp);
     ~WaveForm();
 
-    //setters
-    void setAmplitude(int amp);
-    void setFrequency(double freq);
-    void setSampleRate(int sr);
-
-    //getters
-    int getAmplitude();
-    double getFrequency();
-    int getSampleRate();
-
     /**
     This function calculates a simple sinewave.
       - Parameters:
@@ -46,11 +36,6 @@ class WaveForm {
     */
     int sinewave(int index);
 
-  /* TODO:
-     void squarewave(double frequency);
-     void phasorwave(double frequency);
-     ...and so
-   */
 };
 
 #endif /* WaveForm_hpp */
